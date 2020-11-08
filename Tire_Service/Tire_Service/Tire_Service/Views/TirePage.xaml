@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tire_Service.ViewModels"  
+             xmlns:model="clr-namespace:Tire_Service.Models" 
+             
+             x:Class="Tire_Service.Views.TirePage">
+
+    <ContentPage.Content>
+        
+        <StackLayout BackgroundColor =" White "  >
+            <Grid Padding="3" Margin="0" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35">
+
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <Button Clicked="DiskClicked" Padding="3" Grid.Column="0" Text="Диски" FontSize="22" BackgroundColor="SlateGray"  FontAttributes="Bold"/>
+                <Button Padding="3"  Grid.Column="1" Text="Шини" FontSize="22" BackgroundColor="#7080c4" FontAttributes="Bold" />
+                <Button Clicked="ServiceClicked" Padding="3" Grid.Column="2" Text="Послуги" FontSize="22" BackgroundColor="SlateGray" FontAttributes="Bold" />
+            </Grid>
+            <ListView x:Name = "TiresList" HasUnevenRows="True" ItemSelected="TireSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+
+                            <Grid Padding="10,20,0,0" Margin="30"  HorizontalOptions="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="35" />
+                                    <RowDefinition Height="45"  />
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Scale="1.2" Source="{Binding photo_tires}"  HorizontalOptions="Start"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text = "{Binding firm ,StringFormat='ФІРМА: {0}'}"  FontAttributes="Bold"  FontSize = "27" />
+                                <Label Grid.Row="2" Grid.Column="0" Text = "{Binding model ,StringFormat='Модель: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                                <Label Grid.Row="3" Grid.Column="0" Padding="5,15,0,0" HorizontalOptions="End" Text = "{Binding price , StringFormat='ЦІНА: {0} ГРН.'}" FontAttributes="Bold" TextDecorations="Underline" FontSize = "21" />
+
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

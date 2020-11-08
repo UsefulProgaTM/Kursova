@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tire_Service.Views.TireBrowse">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor =" White "  >
+            <Grid Padding="10,25,0,0" Margin="20"  HorizontalOptions="Center" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="25" />
+                    
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.Column="0"  Scale="1.15" Source="{Binding photo_tires }"  HorizontalOptions="Start"/>
+                <Label Grid.Row="1" Grid.Column="0"  Text = "{Binding firm ,StringFormat='ФІРМА: {0}'}"  FontAttributes="Bold"  FontSize = "27" />
+                <Label Grid.Row="2" Grid.Column="0" Text = "{Binding model  ,StringFormat='Модель: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="3" Grid.Column="0" Text = "{Binding season  ,StringFormat='Сезон: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="4" Grid.Column="0"  Text = "{Binding type ,StringFormat='Тип авто: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="5" Grid.Column="0"  Text = "{Binding speed_index  ,StringFormat='Індекс швидкості: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="6" Grid.Column="0"  Text = "{Binding loading_index  ,StringFormat='Індекс навантаження: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="7" Grid.Column="0" Text = "{Binding spiked  ,StringFormat='Шипи: {0}'}" FontAttributes="Bold" FontSize = "18"/>
+                <Label Grid.Row="8" Grid.Column="0"   Text = "{Binding price  , StringFormat='ЦІНА: {0}'}" FontAttributes="Bold" TextDecorations="Underline" FontSize = "19" />
+            </Grid>
+            <Button FontSize="25" VerticalOptions="EndAndExpand" Clicked="TireBuyClicked" BackgroundColor="#7080c4" Text="ПРИДБАТИ" FontAttributes="Bold"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
